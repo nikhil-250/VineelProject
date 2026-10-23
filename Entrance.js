@@ -7,7 +7,7 @@ function startButterflies() {
 
   const butterflyEmojis = ['🦋', '🦋', '🦋', '🧚‍♀️', '✨']; 
   const flightPaths = ['fly-diag', 'fly-diag-rev', 'fly-updown', 'fly-cross'];
-
+ 
   setInterval(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     
