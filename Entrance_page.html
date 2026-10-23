@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allie & Jer_vin_ 🦋</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦋</text></svg>" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="Entrance.css" />
+</head>
+<body>
+
+  <!-- Magic background layers -->
+  <div class="bg-royal"></div>
+  <div class="bg-glow"></div>
+
+  <!-- main card -->
+  <main class="card">
+    <span class="id-badge">Allie___7</span>
+    <h1 class="title">pick our play time 🦋</h1>
+    <p class="subtitle">sent straight to <strong>Jer_vin_</strong></p>
+
+    <form id="scheduleForm" action="https://formspree.io/f/xgaaelbz" method="POST">
+      
+      <!-- 1. Confirmation Yes/No -->
+      <div class="field">
+        <label>✨ Are you joining today?</label>
+        <div class="radio-row" id="confirmRow">
+          <label class="radio-pill"><input type="radio" name="joining" value="Yes" checked /><span>Yes 🥰</span></label>
+          <label class="radio-pill"><input type="radio" name="joining" value="No" /><span>No 🥺</span></label>
+        </div>
+      </div>
+
+      <!-- 2. Schedule fields (shows if Yes) -->
+      <div id="scheduleFields">
+        <div class="field">
+          <label>⏳ session length</label>
+          <div class="radio-row" id="durationRow">
+            <label class="radio-pill"><input type="radio" name="duration" value="15" /><span>15 min</span></label>
+            <label class="radio-pill"><input type="radio" name="duration" value="30" checked /><span>30 min</span></label>
+            <label class="radio-pill"><input type="radio" name="duration" value="45" /><span>45 min</span></label>
+            <label class="radio-pill"><input type="radio" name="duration" value="60" /><span>1 hr</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="date">📅 date</label>
+          <input type="date" id="date" name="date" />
+        </div>
+
+        <div class="field">
+          <label for="time">🕐 time</label>
+          <select id="time" name="time">
+            <option value="">-- choose a time --</option>
+          </select>
+        </div>
+
+        <!-- CUSTOM TIME INPUT -->
+        <div class="field" id="customTimeField" style="display: none;">
+          <label for="customTime">✍️ type exact time</label>
+          <input type="text" id="customTime" name="customTime" placeholder="e.g., 14:35 or 8:15 PM" />
+        </div>
+      </div>
+
+      <!-- 3. Comment field (shows if No) -->
+      <div class="field" id="commentField" style="display: none;">
+        <label for="comment">📝 leave a little note</label>
+        <input type="text" id="comment" name="comment" placeholder="Busy today? Let Jer_vin_ know..." />
+      </div>
+
+      <!-- Hidden metadata -->
+      <input type="hidden" name="profile" value="Allie___7" />
+      <input type="hidden" name="to" value="Jer_vin_" />
+
+      <button type="submit" class="submit-btn" id="submitBtn">send to Jer_vin_ 💌</button>
+    </form>
+  </main>
+
+  <!-- thank-you modal -->
+  <div class="modal-overlay" id="modal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="heart-icon">💖</div>
+      <h2 class="modal-title">Thank you!</h2>
+      <p class="modal-time" id="modalTime"></p>
+      <p class="modal-to">sent to <strong>Jer_vin_</strong> 💌</p>
+      <button class="done-btn" id="doneBtn">Done</button>
+    </div>
+  </div>
+
+  <script src="Entrance.js"></script>
+</body>
+</html>
